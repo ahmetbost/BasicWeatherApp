@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var city = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            TextField("City Name", text: $city)
+            
+            Button("Get Weather") {
+                fetchWeather(for: city)
+            }
+            
         }
         .padding()
     }
